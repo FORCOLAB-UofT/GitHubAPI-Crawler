@@ -141,7 +141,7 @@ sklearn==0.0
 smart-open==1.8.4
 smmap2==2.0.5
 tensorboard==1.14.0
-tensorflow==1.14.0
+tensorflow==1.15.2
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
 terminado==0.8.2
