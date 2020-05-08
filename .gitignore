@@ -1,0 +1,10 @@
+.env/
+/Data
+/NLPmodel
+/venv
+.pyc
+.idea
+__pycache__/
+ github/__pycache__/
+.ipynb
+/input
