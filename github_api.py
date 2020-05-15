@@ -1,18 +1,21 @@
 import time
 from datetime import datetime
 import json
-import logging
 from typing import Iterable
 from random import randint
-import init
 import os.path
 from util import language_tool
 import fetch_raw_diff
+import logging
+import os.path
+import init
+from fetch_raw_diff import *
+from util import localfile
 
-try:
-    import settings
-except ImportError:
-    settings = object()
+# try:
+#     import settings
+# except ImportError:
+#     settings = object()
 
 # _tokens = getattr(settings, "SCRAPER_GITHUB_API_TOKENS", [])
 
@@ -26,13 +29,7 @@ file_list_cache = {}
 
 
 
-import logging
-import os.path
 
-
-import init
-from fetch_raw_diff import *
-from util import localfile
 
 logger = logging.getLogger('INTRUDE.scraper')
 # nonCodeFileExtensionList = [line.rstrip('\n') for line in open('./data/NonCodeFile.txt')]
@@ -982,7 +979,7 @@ def fetch_commit(url, renew=False):
 
 # ------------------About Pull Requests----------------------------------------------------
 
-def get_pull(repo, num, renew=False):
+def get_PR(repo, num, renew=False):
     api = GitHubAPI()
     save_path = LOCAL_DATA_PATH + '/pr_data/%s/%s/api.json' % (repo, num)
     if os.path.exists(save_path) and (not renew):
@@ -1086,10 +1083,10 @@ def pull_commit_sha(p):
 # This function checks if the PR has changed too many files
 def check_too_big(pull):
     if not ("changed_files" in pull):
-        pull = get_pull(pull["base"]["repo"]["full_name"], pull["number"])
+        pull = get_PR(pull["base"]["repo"]["full_name"], pull["number"])
 
     if not ("changed_files" in pull):
-        pull = get_pull(pull["base"]["repo"]["full_name"], pull["number"], True)
+        pull = get_PR(pull["base"]["repo"]["full_name"], pull["number"], True)
 
     if pull["changed_files"] > 50:
         #         print('more than 50 changed files')
@@ -1233,7 +1230,7 @@ def allNonCodeFiles(pull):
 
 # ------------------About Pull Requests----------------------------------------------------
 
-def get_pull(repo, num, renew=False):
+def get_PR(repo, num, renew=False):
     save_path = LOCAL_DATA_PATH + '/pr_data/%s/%s/api.json' % (repo, num)
     if os.path.exists(save_path) and (not renew):
         try:
@@ -1275,10 +1272,3 @@ def get_pr_and_issue_numbers(text):
     return nums
 
 
-if __name__ == "__main__":
-
-    # query github api with URL
-    res = api.request("repos/jquery/jquery/pulls/4406/commits")
-
-    # query issue/pr timeline
-    events = api.get_issue_pr_timeline("jquery/jquery",4406)
