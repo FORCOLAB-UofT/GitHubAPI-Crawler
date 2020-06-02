@@ -1,6 +1,7 @@
 .env/
 /NLPmodel
-/data
+data/*
+!/data/NonCodeFile.txt
 /venv
 .pyc
 .idea
