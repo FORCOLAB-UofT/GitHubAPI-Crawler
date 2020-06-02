@@ -1,4 +1,12 @@
 # GitHubAPI-Crawler
 This is a fork of @user2589/ghd
 
-To execute the script, you need to: add GitHub Tokens to token.txt, each line is one token
+## To execute the script
+Create token.txt file, and list your GitHub Token per line
+
+## How to create GitHub Tokens
+Once you log into your GitHub account, click on your avatar - Settings - Developer settings - Personal access tokens - Generate new token - Generate token (green button at the bottom of the screen). Important: DO NOT CHECK ANY OF THE BOXES THAT DEFINE SCOPES
+
+You could have multiple email accounts (--> multiple GitHub accounts) --> make a token for each. 
+
+
