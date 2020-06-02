@@ -1,5 +1,4 @@
 .env/
-/data
 /NLPmodel
 /venv
 .pyc
