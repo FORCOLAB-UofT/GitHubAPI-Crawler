@@ -1,5 +1,6 @@
 .env/
 /NLPmodel
+/data
 /venv
 .pyc
 .idea
