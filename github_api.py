@@ -704,6 +704,18 @@ class GitHubAPI(object):
             return email
 
 
+    # this function get repo by specifying constraints
+    def get_repo(self, language, created_date_from, created_date_to):
+        """ Return timeline on an issue or a pull request
+                :param repo: str 'owner/repo'url
+                :param issue_id: int, either an issue or a Pull Request id
+                """
+        url = 'search/repositories?q=language%3A\"'+language+'\"+created%3A'+created_date_from+'..'+created_date_to
+        print(url)
+        repos = self.request(url, paginate=False)
+        return repos
+
+
 def review_comments(self, repo, pr_id):
     """ Pull request comments attached to some code
     See also issue_comments()
@@ -873,6 +885,7 @@ class GitHubAPIv4(GitHubAPI):
             cursor = data["ref"]["target"]["history"]["pageInfo"]["endCursor"]
             if not data["ref"]["target"]["history"]["pageInfo"]["hasNextPage"]:
                 break
+
 
 
 def fetch_pr_code_info(repo, pr_id, must_in_local=False):
@@ -1270,5 +1283,7 @@ def get_pr_and_issue_numbers(text):
     nums = list(filter(lambda x: len(x) > 0, nums))
     nums = list(set(nums))
     return nums
+
+
 
 
