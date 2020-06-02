@@ -9,4 +9,7 @@ Once you log into your GitHub account, click on your avatar - Settings - Develop
 
 You could have multiple email accounts (--> multiple GitHub accounts) --> make a token for each. 
 
+## How to contribute
+Create a fork, make changes in your fork, and once finish the implementation, submit a PR.
+
 
