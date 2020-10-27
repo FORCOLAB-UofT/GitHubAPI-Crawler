@@ -28,7 +28,7 @@ configobj==5.0.6
 configparser==3.8.1
 contextlib2==0.5.5
 crcmod==1.7
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 decorator==4.4.0
 distro==1.4.0
