@@ -11,7 +11,7 @@ else:
     if (platform.system() == 'Linux'):
         LOCAL_DATA_PATH = '/DATA/luyao'
     else:
-        LOCAL_DATA_PATH = '/Users/shuruiz/Work/researchProjects'
+        LOCAL_DATA_PATH = 'C:/Users/jimmy/Documents/GitHub'
     # monitored_repoList_filePath = 'data/test_repo_list.txt'
     PR_pairList_filePath_prefix = 'data/consecutive_PR_pairs_'
     # PR_candidate_List_filePath_prefix = 'data/candidate_PR_'
