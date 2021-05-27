@@ -1,8 +1,0 @@
-#https://github.com/huggingface/transformers
-#https://github.com/fighting41love/funNLP
-#https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap
-#https://github.com/apachecn/AiLearning
-#https://github.com/google-research/bert
-#https://github.com/yunjey/pytorch-tutorial
-https://github.com/matterport/Mask_RCNN
-#https://github.com/eriklindernoren/ML-From-Scratch
