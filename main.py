@@ -20,7 +20,7 @@ if __name__ == "__main__":
     res = api.get_repo("Python","2016-05-21","2021-05-21")
     #res = api.get_repo("Jupyter%20Notebook", "2008-01-01","2009-01-01")
 
-    f = open("repositories_python.txt","w")
+    f = open("repositories_python_2.txt","w")
     for i in range(len(res['items'])):
         desc = res['items'][i]['description']
         name = res['items'][i]['name']
