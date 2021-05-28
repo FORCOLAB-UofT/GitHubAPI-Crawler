@@ -710,9 +710,21 @@ class GitHubAPI(object):
                 :param repo: str 'owner/repo'url
                 :param issue_id: int, either an issue or a Pull Request id
                 """
+        # append to repos['items'] list
+        # keep going through the results pages and extract ['items']
+        # append extracted items to original
         url = 'search/repositories?q=language%3A\"'+language+'\"+created%3A'+created_date_from+'..'+created_date_to
-        print(url)
         repos = self.request(url, paginate=False)
+        page = 1
+        total_repos = repos['total_count']
+        items_remaining = total_repos - len(repos['items'])
+        while items_remaining > 0:
+            # next page
+            page += 1
+            url = 'search/repositories?q=language%3A\"'+language+'\"+created%3A'+created_date_from+'..'+created_date_to+'&page='+str(page)
+            repos['items'] += self.request(url, paginate=False)['items']
+            items_remaining = total_repos - len(repos['items'])
+            print("Repository search results remaining: {}".format(items_remaining))
         return repos
 
 
