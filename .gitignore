@@ -12,3 +12,4 @@ __pycache__/
 repositories_notebook.txt
 repositories_python.txt
 .venv
+main.py
