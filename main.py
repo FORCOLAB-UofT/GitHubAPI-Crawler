@@ -1,5 +1,4 @@
 from github_api import GitHubAPI
-import re
 
 if __name__ == "__main__":
     api = GitHubAPI()
@@ -14,19 +13,4 @@ if __name__ == "__main__":
 
 
     #Search repos
-
-    # jupyter notebook, description is sklearn, pytorch, scikit-learn, tensorflow, caffe
-    # 5 year range from today
-    res = api.get_repo("Python","2016-05-21","2021-05-21")
-    #res = api.get_repo("Jupyter%20Notebook", "2008-01-01","2009-01-01")
-
-    f = open("repositories_python_2.txt","w")
-    for i in range(len(res['items'])):
-        desc = res['items'][i]['description']
-        name = res['items'][i]['name']
-        if desc is not None and (re.search(r"(?i)scikit.*learn",desc) or re.search(r"(?i)tensorflow",desc) or re.search(r"(?i)pytorch",desc) or re.search(r"(?i)sklearn",desc) or re.search(r"(?i)caffe",desc) or re.search(r"(?i)machine.*learning",desc) or re.search(r"(?i)deep.*learning",desc) or re.search(r"(?i)predict(ion)?",desc)
-                                 or re.search(r"(?i)scikit.*learn",name) or re.search(r"(?i)tensorflow",name) or re.search(r"(?i)pytorch",name) or re.search(r"(?i)sklearn",name) or re.search(r"(?i)caffe",name) or re.search(r"(?i)machine.*learning",name) or re.search(r"(?i)deep.*learning",name)):
-            f.write(res['items'][i]['html_url'])
-            f.write('\n')
-
-    f.close()
+    res = api.get_repo("Jupyter%20Notebook","2008-01-01","2009-01-01")
