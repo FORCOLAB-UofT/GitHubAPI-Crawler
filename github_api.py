@@ -719,12 +719,12 @@ class GitHubAPI(object):
         total_repos = min(repos['total_count'], 1000)
         items_remaining = total_repos - len(repos['items'])
         while items_remaining > 0:
+            items_remaining = total_repos - len(repos['items'])
+            print("Repository search results remaining: {}".format(items_remaining))
             # next page
             page += 1
             url = 'search/repositories?q=language%3A\"'+language+'\"+created%3A'+created_date_from+'..'+created_date_to+'&s=stars'+'&page='+str(page)
             repos['items'] += self.request(url, paginate=False)['items']
-            items_remaining = total_repos - len(repos['items'])
-            print("Repository search results remaining: {}".format(items_remaining))
         return repos
 
 
