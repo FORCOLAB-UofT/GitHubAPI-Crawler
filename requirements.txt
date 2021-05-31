@@ -30,5 +30,5 @@ requests==2.25.1
 six==1.15.0
 tornado==6.1
 traitlets==5.0.5
-urllib3==1.26.2
+urllib3==1.26.4
 wcwidth==0.2.5
