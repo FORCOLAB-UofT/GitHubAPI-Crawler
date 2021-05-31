@@ -9,3 +9,6 @@ __pycache__/
  github/__pycache__/
 .ipynb
 /input
+repositories_notebook.txt
+repositories_python.txt
+.venv

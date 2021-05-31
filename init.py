@@ -27,5 +27,3 @@ mysqlParam = "./input/mysqlParams.txt"
 # print('monitored_repoList_filePath:' + monitored_repoList_filePath)
 # print('LOCAL_DATA_PATH:' + LOCAL_DATA_PATH)
 # print('PR_candidate_List_filePath_prefix:' + PR_candidate_List_filePath_prefix)
-
-
